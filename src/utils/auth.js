@@ -11,6 +11,8 @@ export const newToken = user => {
 export const verifyToken = token =>
   new Promise((resolve, reject) => {
     jwt.verify(token, config.secrets.jwt, (err, payload) => {
+      console.log('payload ', payload)
+      console.log('err ', err)
       if (err) return reject(err)
       resolve(payload)
     })
@@ -41,7 +43,7 @@ export const signin = async (req, res) => {
     const user = await User.findOne({ email: req.body.email })
       .select('email password')
       .exec()
-
+    console.log('req.body ', req.body)
     if (!user) {
       return res.status(401).send(invalid)
     }
@@ -62,7 +64,7 @@ export const signin = async (req, res) => {
 
 export const protect = async (req, res, next) => {
   const bearer = req.headers.authorization
-
+  console.log('req.headers.authorization ', req.headers.authorization)
   if (!bearer || !bearer.startsWith('Bearer ')) {
     return res.status(401).end()
   }

@@ -2,5 +2,6 @@ export const config = {
   secrets: {
     jwt: 'learneverything'
   },
-  dbUrl: 'mongodb://localhost:27017/api-design'
+  dbUrl:
+    'mongodb+srv://datcoders:fyTMM6DRVQ7EAkgv@datcoders-humld.mongodb.net/lgbti-rights?retryWrites=true&w=majority'
 }

@@ -1,11 +1,11 @@
 import mongoose from 'mongoose'
 import cuid from 'cuid'
 import _ from 'lodash'
-import { Item } from './src/resources/item/item.model'
-import { List } from './src/resources/list/list.model'
 import { User } from './src/resources/user/user.model'
+import { Countries } from './src/resources/countries/countries.model'
+import { CountriesDetailed } from './src/resources/countries-detailed/countries-detailed.model'
 
-const models = { User, List, Item }
+const models = { User, Countries, CountriesDetailed }
 
 const url =
   process.env.MONGODB_URI ||

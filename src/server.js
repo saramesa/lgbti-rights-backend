@@ -6,8 +6,8 @@ import cors from 'cors'
 import { signup, signin, protect } from './utils/auth'
 import { connect } from './utils/db'
 import userRouter from './resources/user/user.router'
-import itemRouter from './resources/item/item.router'
-import listRouter from './resources/list/list.router'
+import countriesRouter from './resources/countries/countries.router'
+import countriesDetailedRouter from './resources/countries-detailed/countries-detailed.router'
 
 export const app = express()
 
@@ -21,10 +21,10 @@ app.use(morgan('dev'))
 app.post('/signup', signup)
 app.post('/signin', signin)
 
-app.use('/api', protect)
+// app.use('/api', protect)
 app.use('/api/user', userRouter)
-app.use('/api/item', itemRouter)
-app.use('/api/list', listRouter)
+app.use('/api/countries', countriesRouter)
+app.use('/api/countries-detailed', countriesDetailedRouter)
 
 export const start = async () => {
   try {

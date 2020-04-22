@@ -1,15 +1,20 @@
 export const getOne = model => async (req, res) => {
+  const id =
+    req.params && req.params.id ? req.params.id.toUpperCase() : undefined
+  const lan =
+    req.query && req.query.lan ? req.query.lan.toLowerCase() : undefined
   try {
     const doc = await model
-      .findOne({ createdBy: req.user._id, _id: req.params.id })
+      .findOne({ country_code: id })
       .lean()
       .exec()
 
     if (!doc) {
-      return res.status(400).end()
+      return res.status(404).send('No data found')
     }
+    const document = formatDocument(doc, req.baseUrl, lan)
 
-    res.status(200).json({ data: doc })
+    res.status(200).json({ data: document })
   } catch (e) {
     console.error(e)
     res.status(400).end()
@@ -19,7 +24,7 @@ export const getOne = model => async (req, res) => {
 export const getMany = model => async (req, res) => {
   try {
     const docs = await model
-      .find({ createdBy: req.user._id })
+      .find()
       .lean()
       .exec()
 
@@ -82,6 +87,20 @@ export const removeOne = model => async (req, res) => {
     console.error(e)
     res.status(400).end()
   }
+}
+
+const formatDocument = (doc, url, lan) => {
+  if (url === '/api/countries-detailed' || url === '/api/countries') {
+    return [doc].map(country => {
+      const obj = {
+        ...country,
+        name: country.translations[lan] || country.name
+      }
+      const { translations, ...objWithoutTranslations } = obj
+      return objWithoutTranslations
+    })
+  }
+  return doc
 }
 
 export const crudControllers = model => ({
