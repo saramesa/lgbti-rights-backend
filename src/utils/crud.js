@@ -2,7 +2,9 @@ export const getOne = model => async (req, res) => {
   const id =
     req.params && req.params.id ? req.params.id.toUpperCase() : undefined
   const lan =
-    req.query && req.query.lan ? req.query.lan.toLowerCase() : undefined
+    req.headers && req.headers['accept-language']
+      ? req.headers['accept-language'].toLowerCase()
+      : undefined
   try {
     const doc = await model
       .findOne({ country_code: id })
