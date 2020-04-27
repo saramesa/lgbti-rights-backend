@@ -4,8 +4,9 @@ import _ from 'lodash'
 import { User } from './src/resources/user/user.model'
 import { Countries } from './src/resources/countries/countries.model'
 import { CountriesDetailed } from './src/resources/countries-detailed/countries-detailed.model'
+import { Links } from './src/resources/links/links.model'
 
-const models = { User, Countries, CountriesDetailed }
+const models = { Links, User, Countries, CountriesDetailed }
 
 const url =
   process.env.MONGODB_URI ||

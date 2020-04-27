@@ -8,6 +8,7 @@ import { connect } from './utils/db'
 import userRouter from './resources/user/user.router'
 import countriesRouter from './resources/countries/countries.router'
 import countriesDetailedRouter from './resources/countries-detailed/countries-detailed.router'
+import linksRouter from './resources/links/links.router'
 
 export const app = express()
 
@@ -25,6 +26,7 @@ app.post('/signin', signin)
 app.use('/api/user', userRouter)
 app.use('/api/countries', countriesRouter)
 app.use('/api/countries-detailed', countriesDetailedRouter)
+app.use('/api/links', linksRouter)
 
 export const start = async () => {
   try {
