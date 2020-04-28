@@ -12,7 +12,7 @@ export const getOne = model => async (req, res) => {
       .exec()
 
     if (!doc) {
-      return res.status(404).send('No data found')
+      return res.status(404).send({ error: 'No data found' })
     }
     const document = formatDocument([doc], req.baseUrl, lan)
 
