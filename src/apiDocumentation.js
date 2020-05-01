@@ -3,7 +3,7 @@ const apiDocumentation = {
   info: {
     version: '1.3.0',
     title: 'Lgbti Rights',
-    description: 'User management API'
+    description: 'LGBTI Rights API'
   },
   servers: [
     // {
