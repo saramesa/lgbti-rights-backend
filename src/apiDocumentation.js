@@ -672,6 +672,10 @@ const apiDocumentation = {
               flag: {
                 type: 'string',
                 example: 'https://restcountries.eu/data/afg.svg'
+              },
+              flag_png: {
+                type: 'string',
+                example: 'https://www.countryflags.io/AF/flat/64.png'
               }
             }
           }
@@ -724,6 +728,10 @@ const apiDocumentation = {
           flag: {
             type: 'string',
             example: 'https://restcountries.eu/data/afg.svg'
+          },
+          flag_png: {
+            type: 'string',
+            example: 'https://www.countryflags.io/AF/flat/64.png'
           },
           marriageAllowed: {
             type: 'string',
