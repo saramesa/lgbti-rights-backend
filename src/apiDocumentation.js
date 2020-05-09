@@ -689,15 +689,34 @@ const apiDocumentation = {
             example: '5ea6961f69b56b3975fdd201'
           },
           andrea: {
-            type: 'string',
-            example: 'https://github.com/andreaagudo3'
+            type: 'object',
+            properties: {
+              link: {
+                type: 'string',
+                example: 'https://github.com/andreaagudo3'
+              },
+              photo: {
+                type: 'string',
+                example: 'https://s3.eu-central-1.amazonaws.com/lgbti-rights.com/andrea.jpg'
+              }
+            }
           },
           sara: {
-            type: 'string',
-            example: 'https://github.com/saramesa'
+            type: 'object',
+            properties: {
+              link: {
+                type: 'string',
+                example: 'https://github.com/saramesa'
+              },
+              photo: {
+                type: 'string',
+                example: 'https://s3.eu-central-1.amazonaws.com/lgbti-rights.com/sara.jpg'
+              }
+            }
           }
-        }
-      },
+        },
+      }
+    },
       Country: {
         type: 'object',
         properties: {

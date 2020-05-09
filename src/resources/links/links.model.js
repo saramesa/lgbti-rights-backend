@@ -2,8 +2,14 @@ import mongoose from 'mongoose'
 
 const linksSchema = new mongoose.Schema(
   {
-    andrea: String,
-    sara: String
+    andrea: {
+      link: String,
+      photo: String
+    },
+    sara: {
+      link: String,
+      photo: String
+    }
   },
   { timestamps: true }
 )
