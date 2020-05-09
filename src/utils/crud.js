@@ -2,7 +2,9 @@ export const getOne = model => async (req, res) => {
   const id =
     req.params && req.params.id ? req.params.id.toUpperCase() : undefined
   const lan =
-    req.query && req.query.lan ? req.query.lan.toLowerCase() : undefined
+    req.headers && req.headers['accept-language']
+      ? req.headers['accept-language'].toLowerCase()
+      : undefined
   try {
     const doc = await model
       .findOne({ country_code: id })
@@ -10,9 +12,9 @@ export const getOne = model => async (req, res) => {
       .exec()
 
     if (!doc) {
-      return res.status(404).send('No data found')
+      return res.status(404).send({ error: 'No data found' })
     }
-    const document = formatDocument(doc, req.baseUrl, lan)
+    const document = formatDocument([doc], req.baseUrl, lan)
 
     res.status(200).json({ data: document })
   } catch (e) {
@@ -22,13 +24,17 @@ export const getOne = model => async (req, res) => {
 }
 
 export const getMany = model => async (req, res) => {
+  const lan =
+    req.headers && req.headers['accept-language']
+      ? req.headers['accept-language'].toLowerCase()
+      : undefined
   try {
     const docs = await model
       .find()
       .lean()
       .exec()
-
-    res.status(200).json({ data: docs })
+    const documents = formatDocument(docs, req.baseUrl, lan)
+    res.status(200).json({ data: documents })
   } catch (e) {
     console.error(e)
     res.status(400).end()
@@ -91,7 +97,7 @@ export const removeOne = model => async (req, res) => {
 
 const formatDocument = (doc, url, lan) => {
   if (url === '/api/countries-detailed' || url === '/api/countries') {
-    return [doc].map(country => {
+    return doc.map(country => {
       const obj = {
         ...country,
         name: country.translations[lan] || country.name

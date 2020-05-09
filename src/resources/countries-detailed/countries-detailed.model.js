@@ -170,7 +170,8 @@ const countriesDetailedSchema = new mongoose.Schema(
       hr: String,
       fa: String
     },
-    flag: String
+    flag: String,
+    flag_png: String
   },
   { timestamps: true }
 )

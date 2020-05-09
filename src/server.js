@@ -8,6 +8,9 @@ import { connect } from './utils/db'
 import userRouter from './resources/user/user.router'
 import countriesRouter from './resources/countries/countries.router'
 import countriesDetailedRouter from './resources/countries-detailed/countries-detailed.router'
+import linksRouter from './resources/links/links.router'
+import swaggerUi from 'swagger-ui-express'
+import apiDocumentation from './apiDocumentation'
 
 export const app = express()
 
@@ -21,11 +24,12 @@ app.use(morgan('dev'))
 app.post('/signup', signup)
 app.post('/signin', signin)
 
-app.use('/api', protect)
+// app.use('/api', protect)
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(apiDocumentation))
 app.use('/api/user', userRouter)
 app.use('/api/countries', countriesRouter)
 app.use('/api/countries-detailed', countriesDetailedRouter)
+app.use('/api/links', linksRouter)
 
 export const start = async () => {
   try {

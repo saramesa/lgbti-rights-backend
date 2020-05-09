@@ -19,6 +19,7 @@ const countriesSchema = new mongoose.Schema(
       fa: String
     },
     flag: String,
+    flag_png: String,
     legality: String,
     marriageAllowed: String
   },
