@@ -1,6 +1,7 @@
 import config from '../config'
 import { User } from '../resources/user/user.model'
 import jwt from 'jsonwebtoken'
+import randtoken from 'rand-token'
 
 export const newToken = user => {
   return jwt.sign({ id: user.id }, config.secrets.jwt, {
@@ -11,8 +12,6 @@ export const newToken = user => {
 export const verifyToken = token =>
   new Promise((resolve, reject) => {
     jwt.verify(token, config.secrets.jwt, (err, payload) => {
-      console.log('payload ', payload)
-      console.log('err ', err)
       if (err) return reject(err)
       resolve(payload)
     })
@@ -20,7 +19,9 @@ export const verifyToken = token =>
 
 export const signup = async (req, res) => {
   if (!req.body.email || !req.body.password) {
-    return res.status(400).send({ message: 'need email and password' })
+    return res
+      .status(400)
+      .send({ error: 400, message: 'need email and password' })
   }
 
   try {
@@ -34,16 +35,20 @@ export const signup = async (req, res) => {
 
 export const signin = async (req, res) => {
   if (!req.body.email || !req.body.password) {
-    return res.status(400).send({ message: 'need email and password' })
+    return res
+      .status(400)
+      .send({ error: 400, message: 'need email and password' })
   }
 
-  const invalid = { message: 'Invalid email and passoword combination' }
+  const invalid = {
+    error: 401,
+    message: 'Invalid email and passoword combination'
+  }
 
   try {
     const user = await User.findOne({ email: req.body.email })
       .select('email password')
       .exec()
-    console.log('req.body ', req.body)
     if (!user) {
       return res.status(401).send(invalid)
     }
@@ -55,18 +60,18 @@ export const signin = async (req, res) => {
     }
 
     const token = newToken(user)
-    return res.status(201).send({ token })
+    var refreshToken = randtoken.uid(256)
+    return res.status(201).send({ token, refreshToken })
   } catch (e) {
     console.error(e)
-    res.status(500).end()
+    res.status(500).send({ error: 500, message: 'Server error' })
   }
 }
 
 export const protect = async (req, res, next) => {
   const bearer = req.headers.authorization
-  console.log('req.headers.authorization ', req.headers.authorization)
   if (!bearer || !bearer.startsWith('Bearer ')) {
-    return res.status(401).end()
+    return res.status(401).send({ error: 401, message: 'Not authorized' })
   }
 
   const token = bearer.split('Bearer ')[1].trim()
@@ -74,7 +79,7 @@ export const protect = async (req, res, next) => {
   try {
     payload = await verifyToken(token)
   } catch (e) {
-    return res.status(401).end()
+    return res.status(401).send({ error: 401, message: 'Not authorized' })
   }
 
   const user = await User.findById(payload.id)
