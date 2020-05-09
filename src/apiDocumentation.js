@@ -714,8 +714,7 @@ const apiDocumentation = {
               }
             }
           }
-        },
-      }
+        }
     },
       Country: {
         type: 'object',
