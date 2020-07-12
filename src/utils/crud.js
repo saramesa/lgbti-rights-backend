@@ -1,6 +1,5 @@
-import { verifyToken } from './auth'
 import errors from './errors'
-import { formatDocument, getToken, getLanguage } from './helpers'
+import { formatDocument, getLanguage } from './helpers'
 
 export const getOne = model => async (req, res) => {
   const id =

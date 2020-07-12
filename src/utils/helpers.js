@@ -1,6 +1,5 @@
 export const formatDocument = (doc, url, lan) => {
   if (url === '/api/countries-detailed' || url === '/api/countries') {
-    console.log('lan ', lan)
     return doc.map(country => {
       const obj = {
         ...country,
