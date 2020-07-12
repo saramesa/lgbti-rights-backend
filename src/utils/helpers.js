@@ -1,10 +1,20 @@
 export const formatDocument = (doc, url, lan) => {
-  if (url === '/api/countries-detailed' || url === '/api/countries') {
+  if (url === '/api/countries-detailed') {
     return doc.map(country => {
       const obj = {
         ...country,
         name: country.translations[lan] || country.name,
         issues: translateIssues(country.issues, lan)
+      }
+
+      const { translations, ...objWithoutTranslations } = obj
+      return objWithoutTranslations
+    })
+  } else if (url === '/api/countries') {
+    return doc.map(country => {
+      const obj = {
+        ...country,
+        name: country.translations[lan] || country.name
       }
 
       const { translations, ...objWithoutTranslations } = obj
@@ -31,6 +41,11 @@ const translateIssues = (issues, lan) => {
     }
   })
 }
+
+export const getToken = req =>
+  req.headers && req.headers.authorization
+    ? req.headers.authorization
+    : undefined
 
 export const getLanguage = req =>
   req.headers && req.headers['accept-language']
