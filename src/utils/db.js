@@ -1,8 +1,7 @@
 import mongoose from 'mongoose'
-import options from '../config'
 
 export const connect = (
-  url = options.dbUrl,
+  url = process.env.DB_URL,
   opts = { useNewUrlParser: true, useUnifiedTopology: true }
 ) => {
   mongoose.set('useCreateIndex', true)

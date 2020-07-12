@@ -155,10 +155,7 @@ const apiDocumentation = {
                 'Consensual sexual activity between individuals of the same sex.',
               current_status: {
                 value: 'Illegal (death penalty as punishment)',
-                value_formatted: {
-                  en: 'Illegal (death penalty as punishment)',
-                  es: 'Ilegal (castigo de pena de muerte)'
-                },
+                value_formatted: 'Illegal (death penalty as punishment)',
                 start_date_formatted: 'October 7, 1976',
                 description:
                   'Article 427 states homosexuality will suffer long imprisonments (along with Adultery.) In addition, article 398 states that honour killing is legal '
@@ -172,7 +169,7 @@ const apiDocumentation = {
                 'Marriage and marriage recognition between two people of the same biological sex and/or gender identity.',
               current_status: {
                 value: 'Not legal',
-                value_formatted: { en: 'Not legal', es: 'Ilegal' },
+                value_formatted: 'Not legal',
                 start_date_formatted: 'August 8, 1971',
                 description: ''
               }
@@ -185,7 +182,7 @@ const apiDocumentation = {
                 "Legal recognition of sex reassignment by permitting a change of legal gender on an individual's birth certificate.",
               current_status: {
                 value: 'ambiguous',
-                value_formatted: { en: 'Ambiguous', es: 'Ambiguo' },
+                value_formatted: 'Ambiguous',
                 description: 'Not preformed. No laws in place to do so.'
               }
             },
@@ -197,7 +194,7 @@ const apiDocumentation = {
                 'The ability for same-sex couples to legally adopt a child.',
               current_status: {
                 value: 'Single only',
-                value_formatted: { en: 'Single only', es: 'Solteros solo' },
+                value_formatted: 'Single only',
                 description: 'no laws in place.'
               }
             },
@@ -209,7 +206,7 @@ const apiDocumentation = {
                 'Prohibition of discrimination based on sexual orientation and/or gender identity.',
               current_status: {
                 value: 'No protections',
-                value_formatted: { en: 'No protections', es: 'Sin protección' },
+                value_formatted: 'No protections',
                 start_date_formatted: 'August 19, 1919',
                 description: ''
               }
@@ -222,7 +219,7 @@ const apiDocumentation = {
                 'Prohibition of discrimination based on sexual orientation and/or gender identity when applying for housing or discrimination by landlords / property owners.',
               current_status: {
                 value: 'No protections',
-                value_formatted: { en: 'No protections', es: 'Sin protección' },
+                value_formatted: 'No protections',
                 start_date_formatted: 'August 19, 1919',
                 description: 'No'
               }
@@ -235,7 +232,7 @@ const apiDocumentation = {
                 'Prohibition of discrimination based on sexual orientation and/or gender identity in employment, including hiring, promotion, termination, harassment, etc.',
               current_status: {
                 value: 'No protections',
-                value_formatted: { en: 'No protections', es: 'Sin protección' },
+                value_formatted: 'No protections',
                 start_date_formatted: 'August 19, 1919',
                 description: 'None exist in the criminal code.'
               }
@@ -248,7 +245,7 @@ const apiDocumentation = {
                 'The ability for homosexuals to serve in the military and be open about their sexuality.',
               current_status: {
                 value: 'Legal',
-                value_formatted: { en: 'Legal', es: 'Legal' },
+                value_formatted: 'Legal',
                 description:
                   'Missing discrimination protections and same sex activity is currently illegal.'
               }
@@ -261,7 +258,7 @@ const apiDocumentation = {
                 'The difference between legal age of consent for homosexual sex and heterosexual sex.',
               current_status: {
                 value: 'Unequal',
-                value_formatted: { en: 'Unequal', es: 'Desigual' },
+                value_formatted: 'Unequal',
                 description: 'Homosexuality is illegal. Person must be married.'
               }
             },
@@ -273,10 +270,7 @@ const apiDocumentation = {
                 'The ability for MSMs (men who have sex with men) to donate blood or tissue for organ transplants. A deferral period refers to a waiting time before a man can donate after having sex.',
               current_status: {
                 value: 'Banned (1-year deferral)',
-                value_formatted: {
-                  en: 'Banned (1-year deferral)',
-                  es: 'Prohibido (aplazamiento de 1 año)'
-                },
+                value_formatted: 'Banned (1-year deferral)',
                 description: 'No'
               }
             },
@@ -288,7 +282,7 @@ const apiDocumentation = {
                 'Legal status of conducting sexual orientation changing therapy ("ex-gay" therapy)',
               current_status: {
                 value: 'ambiguous',
-                value_formatted: { en: 'Ambiguous', es: 'Ambiguo' },
+                value_formatted: 'Ambiguous',
                 description: 'Unknown.'
               }
             }
