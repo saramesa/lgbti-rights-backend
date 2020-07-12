@@ -3,7 +3,6 @@ import { json, urlencoded } from 'body-parser'
 import morgan from 'morgan'
 import config from './config'
 import cors from 'cors'
-import { signup, signin, protect } from './utils/auth'
 import { connect } from './utils/db'
 import userRouter from './resources/user/user.router'
 import countriesRouter from './resources/countries/countries.router'
@@ -21,10 +20,6 @@ app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
-app.post('/signup', signup)
-app.post('/signin', signin)
-
-// app.use('/api', protect)
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(apiDocumentation))
 app.use('/api/user', userRouter)
 app.use('/api/countries', countriesRouter)

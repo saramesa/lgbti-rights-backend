@@ -144,541 +144,161 @@ const apiDocumentation = {
       CountryDetailed: {
         type: 'object',
         properties: {
-          _id: {
-            type: 'string',
-            example: '5e9341940b8e9251da4f0c81'
-          },
-          name: {
-            type: 'string',
-            example: 'Afghanistan'
-          },
-          issues: {
-            type: 'object',
-            properties: {
-              homosexuality: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'Homosexual activity'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'Homosexuality'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      'Consensual sexual activity between individuals of the same sex.'
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'Illegal (death penalty as punishment)'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'Illegal (death penalty as punishment)'
-                          },
-                          es: {
-                            type: 'string',
-                            example: 'Ilegal (castigo de pena de muerte)'
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              marriage: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'Same-sex marriage'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'Marriage'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      'Marriage and marriage recognition between two people of the same biological sex and/or gender identity.'
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'Not legal'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'Not legal'
-                          },
-                          es: {
-                            type: 'string',
-                            example: 'Ilegal'
-                          }
-                        }
-                      },
-                      start_date_formatted: {
-                        type: 'string',
-                        example: 'August 8, 1971'
-                      },
-                      description: {
-                        type: 'string',
-                        example: ''
-                      }
-                    }
-                  }
-                }
-              },
-              changingGender: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'Right to change legal gender'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'Changing Gender'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      "Legal recognition of sex reassignment by permitting a change of legal gender on an individual's birth certificate."
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'ambiguous'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'Ambiguous'
-                          },
-                          es: {
-                            type: 'string',
-                            example: 'Ambiguo'
-                          }
-                        }
-                      },
-                      description: {
-                        type: 'string',
-                        example: 'Not preformed. No laws in place to do so.'
-                      }
-                    }
-                  }
-                }
-              },
-              adoption: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'Same-sex adoption'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'Adoption'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      'The ability for same-sex couples to legally adopt a child.'
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'Single only'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'Single only'
-                          },
-                          es: {
-                            type: 'string',
-                            example: '"Solteros solo'
-                          }
-                        }
-                      },
-                      description: {
-                        type: 'string',
-                        example: 'no laws in place.'
-                      }
-                    }
-                  }
-                }
-              },
-              discrimination: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'LGBT discrimination'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'Discrimination'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      'Prohibition of discrimination based on sexual orientation and/or gender identity.'
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'No protections'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'No protections'
-                          },
-                          es: {
-                            type: 'string',
-                            example: 'Sin protección'
-                          }
-                        }
-                      },
-                      start_date_formatted: {
-                        type: 'string',
-                        example: 'August 19, 1919'
-                      },
-                      description: {
-                        type: 'string',
-                        example: ''
-                      }
-                    }
-                  }
-                }
-              },
-              housingDiscrimination: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'LGBT housing discrimination'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'Housing discrimination'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      'Prohibition of discrimination based on sexual orientation and/or gender identity when applying for housing or discrimination by landlords / property owners.'
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'No protections'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'No protections'
-                          },
-                          es: {
-                            type: 'string',
-                            example: 'Sin protección'
-                          }
-                        }
-                      },
-                      start_date_formatted: {
-                        type: 'string',
-                        example: 'August 19, 1919'
-                      },
-                      description: {
-                        type: 'string',
-                        example: 'No'
-                      }
-                    }
-                  }
-                }
-              },
-              employmentDiscrimination: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'LGBT employment Discrimination'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'Employment Discrimination'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      'Prohibition of discrimination based on sexual orientation and/or gender identity in employment, including hiring, promotion, termination, harassment, etc.'
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'No protections'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'No protections'
-                          },
-                          es: {
-                            type: 'string',
-                            example: 'Sin protección'
-                          }
-                        }
-                      },
-                      start_date_formatted: {
-                        type: 'string',
-                        example: 'August 19, 1919'
-                      },
-                      description: {
-                        type: 'string',
-                        example: 'None exist in the criminal code.'
-                      }
-                    }
-                  }
-                }
-              },
-              military: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'Homosexuals serving openly in military'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'Military'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      'The ability for homosexuals to serve in the military and be open about their sexuality.'
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'Legal'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'Legal'
-                          },
-                          es: {
-                            type: 'string',
-                            example: 'Legal'
-                          }
-                        }
-                      },
-                      description: {
-                        type: 'string',
-                        example:
-                          'Missing discrimination protections and same sex activity is currently illegal.'
-                      }
-                    }
-                  }
-                }
-              },
-              ageOfConsent: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'Equal age of Consent'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'Age of Consent'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      'The difference between legal age of consent for homosexual sex and heterosexual sex.'
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'Unequal'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'Unequal'
-                          },
-                          es: {
-                            type: 'string',
-                            example: 'Desigual'
-                          }
-                        }
-                      },
-                      description: {
-                        type: 'string',
-                        example:
-                          'Homosexuality is illegal. Person must be married.'
-                      }
-                    }
-                  }
-                }
-              },
-              blood: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'Blood donations by MSMs'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'onating Blood'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      'The ability for MSMs (men who have sex with men) to donate blood or tissue for organ transplants. A deferral period refers to a waiting time before a man can donate after having sex.'
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'Banned (1-year deferral)'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'Banned (1-year deferral)'
-                          },
-                          es: {
-                            type: 'string',
-                            example: 'Prohibido (aplazamiento de 1 año)'
-                          }
-                        }
-                      },
-                      description: {
-                        type: 'string',
-                        example: ''
-                      }
-                    }
-                  }
-                }
-              },
-              conversionTherapy: {
-                type: 'object',
-                properties: {
-                  label: {
-                    type: 'string',
-                    example: 'Conversion therapy'
-                  },
-                  label_short: {
-                    type: 'string',
-                    example: 'Conversion therapy'
-                  },
-                  description: {
-                    type: 'string',
-                    example:
-                      'Legal status of conducting sexual orientation changing therapy ("ex-gay" therapy)'
-                  },
-                  current_status: {
-                    type: 'object',
-                    properties: {
-                      value: {
-                        type: 'string',
-                        example: 'ambiguous'
-                      },
-                      value_formatted: {
-                        type: 'object',
-                        properties: {
-                          en: {
-                            type: 'string',
-                            example: 'Ambiguous'
-                          },
-                          es: {
-                            type: 'string',
-                            example: 'Ambiguo'
-                          }
-                        }
-                      },
-                      description: {
-                        type: 'string',
-                        example: 'Unknown.'
-                      }
-                    }
-                  }
-                }
-              },
-              country_code: {
-                type: 'string',
-                example: 'AF'
-              },
-              region: {
-                type: 'string',
-                example: 'Asia'
-              },
-              subregion: {
-                type: 'string',
-                example: 'Southern Asia'
-              },
-              latlng: {
-                type: 'array',
-                example: [33, 65]
-              },
-              flag: {
-                type: 'string',
-                example: 'https://restcountries.eu/data/afg.svg'
-              },
-              flag_png: {
-                type: 'string',
-                example: 'https://www.countryflags.io/AF/flat/64.png'
+          _id: '5eda865f5d6d7812c8235d49',
+          name: 'Afganistán',
+          issues: [
+            {
+              label: 'Homosexual activity',
+              emoji: '🏳️‍🌈',
+              label_short: 'Homosexuality',
+              description:
+                'Consensual sexual activity between individuals of the same sex.',
+              current_status: {
+                value: 'Illegal (death penalty as punishment)',
+                value_formatted: {
+                  en: 'Illegal (death penalty as punishment)',
+                  es: 'Ilegal (castigo de pena de muerte)'
+                },
+                start_date_formatted: 'October 7, 1976',
+                description:
+                  'Article 427 states homosexuality will suffer long imprisonments (along with Adultery.) In addition, article 398 states that honour killing is legal '
+              }
+            },
+            {
+              label: 'Same-sex marriage',
+              emoji: '💒',
+              label_short: 'Marriage',
+              description:
+                'Marriage and marriage recognition between two people of the same biological sex and/or gender identity.',
+              current_status: {
+                value: 'Not legal',
+                value_formatted: { en: 'Not legal', es: 'Ilegal' },
+                start_date_formatted: 'August 8, 1971',
+                description: ''
+              }
+            },
+            {
+              label: 'Right to change legal gender',
+              emoji: '👨‍⚕️',
+              label_short: 'Changing Gender',
+              description:
+                "Legal recognition of sex reassignment by permitting a change of legal gender on an individual's birth certificate.",
+              current_status: {
+                value: 'ambiguous',
+                value_formatted: { en: 'Ambiguous', es: 'Ambiguo' },
+                description: 'Not preformed. No laws in place to do so.'
+              }
+            },
+            {
+              label: 'Same-sex adoption',
+              emoji: '👩‍👩‍👦',
+              label_short: 'Adoption',
+              description:
+                'The ability for same-sex couples to legally adopt a child.',
+              current_status: {
+                value: 'Single only',
+                value_formatted: { en: 'Single only', es: 'Solteros solo' },
+                description: 'no laws in place.'
+              }
+            },
+            {
+              label: 'LGBT discrimination',
+              emoji: '🤬',
+              label_short: 'Discrimination',
+              description:
+                'Prohibition of discrimination based on sexual orientation and/or gender identity.',
+              current_status: {
+                value: 'No protections',
+                value_formatted: { en: 'No protections', es: 'Sin protección' },
+                start_date_formatted: 'August 19, 1919',
+                description: ''
+              }
+            },
+            {
+              label: 'LGBT housing discrimination',
+              emoji: '🏠',
+              label_short: 'Housing Discrimination',
+              description:
+                'Prohibition of discrimination based on sexual orientation and/or gender identity when applying for housing or discrimination by landlords / property owners.',
+              current_status: {
+                value: 'No protections',
+                value_formatted: { en: 'No protections', es: 'Sin protección' },
+                start_date_formatted: 'August 19, 1919',
+                description: 'No'
+              }
+            },
+            {
+              label: 'LGBT employment discrimination',
+              emoji: '👩‍💻',
+              label_short: 'Employment Discrimination',
+              description:
+                'Prohibition of discrimination based on sexual orientation and/or gender identity in employment, including hiring, promotion, termination, harassment, etc.',
+              current_status: {
+                value: 'No protections',
+                value_formatted: { en: 'No protections', es: 'Sin protección' },
+                start_date_formatted: 'August 19, 1919',
+                description: 'None exist in the criminal code.'
+              }
+            },
+            {
+              label: 'Homosexuals serving openly in military',
+              emoji: '🎖',
+              label_short: 'Military',
+              description:
+                'The ability for homosexuals to serve in the military and be open about their sexuality.',
+              current_status: {
+                value: 'Legal',
+                value_formatted: { en: 'Legal', es: 'Legal' },
+                description:
+                  'Missing discrimination protections and same sex activity is currently illegal.'
+              }
+            },
+            {
+              label: 'Equal age of consent',
+              emoji: '🔞',
+              label_short: 'Age of Consent',
+              description:
+                'The difference between legal age of consent for homosexual sex and heterosexual sex.',
+              current_status: {
+                value: 'Unequal',
+                value_formatted: { en: 'Unequal', es: 'Desigual' },
+                description: 'Homosexuality is illegal. Person must be married.'
+              }
+            },
+            {
+              label: 'Blood donations by MSMs',
+              emoji: '💉',
+              label_short: 'Donating Blood',
+              description:
+                'The ability for MSMs (men who have sex with men) to donate blood or tissue for organ transplants. A deferral period refers to a waiting time before a man can donate after having sex.',
+              current_status: {
+                value: 'Banned (1-year deferral)',
+                value_formatted: {
+                  en: 'Banned (1-year deferral)',
+                  es: 'Prohibido (aplazamiento de 1 año)'
+                },
+                description: 'No'
+              }
+            },
+            {
+              label: 'Conversion therapy',
+              emoji: '💊',
+              label_short: 'Conversion Therapy',
+              description:
+                'Legal status of conducting sexual orientation changing therapy ("ex-gay" therapy)',
+              current_status: {
+                value: 'ambiguous',
+                value_formatted: { en: 'Ambiguous', es: 'Ambiguo' },
+                description: 'Unknown.'
               }
             }
-          }
+          ],
+          country_code: 'AF',
+          region: 'Asia',
+          subregion: 'Southern Asia',
+          latlng: [33, 65],
+          flag: 'https://restcountries.eu/data/afg.svg',
+          flag_png: 'https://www.countryflags.io/AF/flat/64.png'
         }
       },
       Links: {
@@ -697,7 +317,8 @@ const apiDocumentation = {
               },
               photo: {
                 type: 'string',
-                example: 'https://s3.eu-central-1.amazonaws.com/lgbti-rights.com/andrea.jpg'
+                example:
+                  'https://s3.eu-central-1.amazonaws.com/lgbti-rights.com/andrea.jpg'
               }
             }
           },
@@ -710,12 +331,13 @@ const apiDocumentation = {
               },
               photo: {
                 type: 'string',
-                example: 'https://s3.eu-central-1.amazonaws.com/lgbti-rights.com/sara.jpg'
+                example:
+                  'https://s3.eu-central-1.amazonaws.com/lgbti-rights.com/sara.jpg'
               }
             }
           }
         }
-    },
+      },
       Country: {
         type: 'object',
         properties: {

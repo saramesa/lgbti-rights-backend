@@ -1,7 +1,9 @@
+import dotenv from 'dotenv'
+
+dotenv.config()
+
 export const config = {
-  secrets: {
-    jwt: 'learneverything'
-  },
+  authorizationToken: process.env.AUTHORIZATION_TOKEN,
   dbUrl:
     'mongodb+srv://datcoders:fyTMM6DRVQ7EAkgv@datcoders-humld.mongodb.net/test?retryWrites=true&w=majority'
 }
